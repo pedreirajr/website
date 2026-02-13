@@ -1,0 +1,14 @@
+# Claude Code
+CLAUDE.md
+
+# RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Quarto
+/.quarto/
+_freeze/
+
+**/*.quarto_ipynb
