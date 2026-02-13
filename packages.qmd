@@ -1,0 +1,30 @@
+---
+title: "R Packages"
+---
+
+::: {.card .border-primary .mb-3}
+::: {.card-header}
+**cnefetools** — Ferramentas para o CNEFE no R
+:::
+::: {.card-body}
+
+[![CRAN status](https://www.r-pkg.org/badges/version/cnefetools)](https://cran.r-project.org/package=cnefetools)
+[![Downloads](https://cranlogs.r-pkg.org/badges/cnefetools)](https://cran.r-project.org/package=cnefetools)
+
+Pacote R para download, leitura e tratamento dos microdados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE).
+
+Funcionalidades principais:
+
+- Download automatizado dos arquivos do CNEFE
+- Leitura e parsing dos microdados
+- Ferramentas de geocodificação e tratamento de endereços
+
+[GitHub](https://github.com/pedreirajr/cnefetools){.btn .btn-primary .btn-sm}
+[CRAN](https://cran.r-project.org/package=cnefetools){.btn .btn-outline-primary .btn-sm}
+
+:::
+:::
+
+::: {.callout-tip}
+Mais pacotes serão adicionados em breve.
+:::

@@ -1,9 +1,33 @@
 ---
 title: "About"
+about:
+  template: trestles
+  image: profile.jpg
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/pedreirajr
+    - icon: youtube
+      text: YouTube
+      href: https://youtube.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
+    - text: Lattes
+      href: http://lattes.cnpq.br
 ---
 
-About this site
+## Sobre mim
 
-```{r}
-1 + 1
-```
+Placeholder: escreva aqui um currículo informal — quem você é, o que pesquisa, seus interesses acadêmicos e pessoais.
+
+## Formação
+
+**Instituição** | Cidade, Estado\
+Título do grau | Ano início -- Ano fim
+
+## Experiência
+
+**Instituição/Empresa** | Cidade, Estado\
+Cargo/Função | Ano início -- Presente

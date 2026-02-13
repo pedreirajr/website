@@ -1,11 +1,9 @@
 ---
-title: "website"
+title: "Jorge Ubirajara Pedreira Junior"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: grid
+  categories: true
+  fields: [title, date, categories, description]
 ---
-
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```

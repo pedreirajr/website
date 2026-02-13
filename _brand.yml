@@ -1,0 +1,12 @@
+color:
+  palette:
+    navy: "#1B2A4A"
+    navy-light: "#2C4066"
+    navy-dark: "#111D33"
+    accent: "#3A7BD5"
+    light-bg: "#F8F9FA"
+    dark-bg: "#1A1A2E"
+  foreground: navy
+  background: light-bg
+  primary: navy
+  secondary: accent

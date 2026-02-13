@@ -1,0 +1,25 @@
+---
+title: "Publications"
+---
+
+## 2026
+
+**Título do artigo placeholder**
+Pedreira Junior, J. U.; Coautor, A. B.; Coautor, C. D.
+*Nome da Revista*, v. X, n. Y, p. 1--15, 2026.
+[DOI](https://doi.org) | [PDF](#)
+
+---
+
+## 2025
+
+**Título do artigo placeholder**
+Pedreira Junior, J. U.; Coautor, A. B.
+*Nome da Revista*, v. X, n. Y, p. 1--20, 2025.
+[DOI](https://doi.org) | [PDF](#)
+
+---
+
+::: {.callout-note}
+Esta página está em construção. Os artigos serão adicionados em breve.
+:::

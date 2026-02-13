@@ -3,22 +3,43 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
+    - "posts/**/*.qmd"
 
 website:
-  title: "website"
+  title: "Jorge Ubirajara Pedreira Junior"
+  site-url: https://pedreirajr.github.io/website
+  search: true
+  open-graph: true
   navbar:
-    right:
+    background: primary
+    left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: publications.qmd
+        text: Publications
+      - href: packages.qmd
+        text: Packages
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/pedreirajr
+      - icon: youtube
+        href: https://youtube.com
+      - icon: linkedin
+        href: https://linkedin.com
+      - text: Lattes
+        href: http://lattes.cnpq.br
+  page-footer:
+    center: |
+      Jorge Ubirajara Pedreira Junior | Powered by [Quarto](https://quarto.org)
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: [cosmo, brand]
+      dark: [darkly, brand]
     css: styles.css
     toc: true
 
 editor: visual
-

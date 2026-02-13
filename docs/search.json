@@ -1,16 +1,72 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "website",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Título do artigo placeholder Pedreira Junior, J. U.; Coautor, A. B.; Coautor, C. D. Nome da Revista, v. X, n. Y, p. 1–15, 2026. DOI | PDF"
+  },
+  {
+    "objectID": "publications.html#section",
+    "href": "publications.html#section",
+    "title": "Publications",
+    "section": "",
+    "text": "Título do artigo placeholder Pedreira Junior, J. U.; Coautor, A. B.; Coautor, C. D. Nome da Revista, v. X, n. Y, p. 1–15, 2026. DOI | PDF"
+  },
+  {
+    "objectID": "publications.html#section-1",
+    "href": "publications.html#section-1",
+    "title": "Publications",
+    "section": "2025",
+    "text": "2025\nTítulo do artigo placeholder Pedreira Junior, J. U.; Coautor, A. B. Nome da Revista, v. X, n. Y, p. 1–20, 2025. DOI | PDF\n\n\n\n\n\n\n\nNote\n\n\n\nEsta página está em construção. Os artigos serão adicionados em breve."
+  },
+  {
+    "objectID": "packages.html",
+    "href": "packages.html",
+    "title": "R Packages",
+    "section": "",
+    "text": "cnefetools — Ferramentas para o CNEFE no R\n\n\n \nPacote R para download, leitura e tratamento dos microdados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE).\nFuncionalidades principais:\n\nDownload automatizado dos arquivos do CNEFE\nLeitura e parsing dos microdados\nFerramentas de geocodificação e tratamento de endereços\n\nGitHub CRAN\n\n\n\n\n\n\n\n\nTip\n\n\n\nMais pacotes serão adicionados em breve."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Placeholder: escreva aqui um currículo informal — quem você é, o que pesquisa, seus interesses acadêmicos e pessoais."
+  },
+  {
+    "objectID": "about.html#sobre-mim",
+    "href": "about.html#sobre-mim",
+    "title": "About",
+    "section": "",
+    "text": "Placeholder: escreva aqui um currículo informal — quem você é, o que pesquisa, seus interesses acadêmicos e pessoais."
+  },
+  {
+    "objectID": "about.html#formação",
+    "href": "about.html#formação",
+    "title": "About",
+    "section": "Formação",
+    "text": "Formação\nInstituição | Cidade, Estado\nTítulo do grau | Ano início – Ano fim"
+  },
+  {
+    "objectID": "about.html#experiência",
+    "href": "about.html#experiência",
+    "title": "About",
+    "section": "Experiência",
+    "text": "Experiência\nInstituição/Empresa | Cidade, Estado\nCargo/Função | Ano início – Presente"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jorge Ubirajara Pedreira Junior",
+    "section": "",
+    "text": "cnefetools no CRAN: ferramentas para o Cadastro Nacional de Endereços\n\n\n\nR\n\nPacotes\n\nCNEFE\n\n\n\nO pacote cnefetools foi publicado no CRAN, facilitando o acesso e a manipulação dos dados do CNEFE (Cadastro Nacional de Endereços para Fins Estatísticos) diretamente no R.\n\n\n\nFeb 13, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/cnefetools-cran/index.html",
+    "href": "posts/cnefetools-cran/index.html",
+    "title": "cnefetools no CRAN: ferramentas para o Cadastro Nacional de Endereços",
+    "section": "",
+    "text": "O pacote cnefetools acaba de ser publicado no CRAN, tornando mais acessível o trabalho com os dados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE). O pacote oferece funções para download, leitura e tratamento dos microdados do CNEFE, permitindo que pesquisadores e analistas integrem facilmente essas informações geográficas em seus fluxos de trabalho no R. Para instalar, basta rodar install.packages(\"cnefetools\"). O código-fonte está disponível no GitHub."
   }
 ]

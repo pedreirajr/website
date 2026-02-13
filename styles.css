@@ -1,1 +1,16 @@
-/* css styles */
+/* Fotos redondas */
+.rounded-photo {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Card hover effect */
+.quarto-grid-item:hover {
+  box-shadow: 0 4px 12px rgba(27, 42, 74, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Footer styling */
+.nav-footer {
+  font-size: 0.9em;
+}

@@ -1,0 +1,8 @@
+---
+title: "cnefetools no CRAN: ferramentas para o Cadastro Nacional de Endereços"
+description: "O pacote cnefetools foi publicado no CRAN, facilitando o acesso e a manipulação dos dados do CNEFE (Cadastro Nacional de Endereços para Fins Estatísticos) diretamente no R."
+date: "2026-02-13"
+categories: [R, Pacotes, CNEFE]
+---
+
+O pacote **cnefetools** acaba de ser publicado no [CRAN](https://cran.r-project.org/package=cnefetools), tornando mais acessível o trabalho com os dados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE). O pacote oferece funções para download, leitura e tratamento dos microdados do CNEFE, permitindo que pesquisadores e analistas integrem facilmente essas informações geográficas em seus fluxos de trabalho no R. Para instalar, basta rodar `install.packages("cnefetools")`. O código-fonte está disponível no [GitHub](https://github.com/pedreirajr/cnefetools).
