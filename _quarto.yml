@@ -7,7 +7,7 @@ project:
 website:
   title: "website"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
       - about.qmd
