@@ -25,7 +25,14 @@
     "href": "packages.html",
     "title": "R Packages",
     "section": "",
-    "text": "cnefetools — Ferramentas para o CNEFE no R\n\n\nPacote R para download, leitura e tratamento dos microdados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE).\nFuncionalidades principais:\n\nDownload automatizado dos arquivos do CNEFE\nLeitura e parsing dos microdados\nFerramentas de geocodificação e tratamento de endereços\n\nGitHub CRAN\n\n\n\n\n\n\n\n\nTip\n\n\n\nMais pacotes serão adicionados em breve."
+    "text": "Pacote R para download, leitura e tratamento dos microdados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE).\nFuncionalidades principais:\n\nDownload automatizado dos arquivos do CNEFE\nLeitura e parsing dos microdados\nFerramentas de geocodificação e tratamento de endereços\n\nGitHub CRAN"
+  },
+  {
+    "objectID": "packages.html#cnefetools",
+    "href": "packages.html#cnefetools",
+    "title": "R Packages",
+    "section": "",
+    "text": "Pacote R para download, leitura e tratamento dos microdados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE).\nFuncionalidades principais:\n\nDownload automatizado dos arquivos do CNEFE\nLeitura e parsing dos microdados\nFerramentas de geocodificação e tratamento de endereços\n\nGitHub CRAN"
   },
   {
     "objectID": "about.html",
