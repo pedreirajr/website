@@ -67,7 +67,7 @@
     "href": "index.html",
     "title": "Jorge Ubirajara Pedreira Junior",
     "section": "",
-    "text": "cnefetools no CRAN: ferramentas para o Cadastro Nacional de Endereços\n\n\n\nR\n\nPacotes\n\nCNEFE\n\n\n\nO pacote cnefetools foi publicado no CRAN, facilitando o acesso e a manipulação dos dados do CNEFE (Cadastro Nacional de Endereços para Fins Estatísticos) diretamente no R.\n\n\n\nFeb 13, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "{cnefetools} package is live on CRAN!\n\n\n\nPackages\n\nDatasets\n\n\n\n\n\n\n\nFeb 13, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/cnefetools-cran/index.html",
@@ -75,5 +75,12 @@
     "title": "cnefetools no CRAN: ferramentas para o Cadastro Nacional de Endereços",
     "section": "",
     "text": "O pacote cnefetools acaba de ser publicado no CRAN, tornando mais acessível o trabalho com os dados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE). O pacote oferece funções para download, leitura e tratamento dos microdados do CNEFE, permitindo que pesquisadores e analistas integrem facilmente essas informações geográficas em seus fluxos de trabalho no R. Para instalar, basta rodar install.packages(\"cnefetools\"). O código-fonte está disponível no GitHub."
+  },
+  {
+    "objectID": "posts/2026-02-13-cnefetools-cran/index.html",
+    "href": "posts/2026-02-13-cnefetools-cran/index.html",
+    "title": "{cnefetools} package is live on CRAN!",
+    "section": "",
+    "text": "The {cnefetools} R package is now available on CRAN. It provides an end-to-end workflow for accessing and analyzing address-level data from the 2022 Brazilian CNEFE (Cadastro Nacional de Endereços para Fins Estatísticos), released by IBGE. With read_cnefe(), you can download and read municipality-level CNEFE data as either an Arrow table for fast in-memory operations or as an sf spatial object ready for mapping and spatial analysis. The package also aggregates address counts by establishment and dwelling types to H3 hexagons or custom polygons via cnefe_counts(), and computes land-use mix indices with compute_lumi(). This includes conventional indices such as Entropy Index, Herfindahl-Hirschman Index, and the Balance Index as well as the adapted Herfindahl-Hirschman Index and the Bidirectional Global-centered Balance Index proposed by Pedreira Jr et al. (2025).\nOne of the most powerful features is dasymetric interpolation through tracts_to_h3() and tracts_to_polygon(). These functions redistribute census tract variables (such as population and income) to other spatial units using CNEFE dwelling points as ancillary data, producing far more realistic estimates than simple areal weighting. This makes it straightforward to map socioeconomic indicators at the neighborhood or hexagonal grid level.\nUnder the hood, {cnefetools} leverages DuckDB with its spatial, H3, and zipfs extensions to perform spatial joins and aggregations efficiently, achieving speedups of up to 20x over pure-R code depending on the geospatialdata structure. A pure-R fallback is also available for users who prefer not to depend on DuckDB. To get started, simply run install.packages(\"cnefetools\"). You can find the source code on GitHub and explore detailed vignettes with worked examples on the package website."
   }
 ]

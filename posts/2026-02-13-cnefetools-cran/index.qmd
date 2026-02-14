@@ -1,0 +1,12 @@
+---
+title: "{cnefetools} package is live on CRAN!"
+date: "2026-02-13"
+categories: [Packages, Datasets]
+image: img/cnefetools-hex.png
+---
+
+The **{cnefetools}** R package is now available on [CRAN](https://cran.r-project.org/package=cnefetools). It provides an end-to-end workflow for accessing and analyzing address-level data from the 2022 Brazilian CNEFE (*Cadastro Nacional de Endereços para Fins Estatísticos*), released by IBGE. With `read_cnefe()`, you can download and read municipality-level CNEFE data as either an Arrow table for fast in-memory operations or as an `sf` spatial object ready for mapping and spatial analysis. The package also aggregates address counts by establishment and dwelling types to H3 hexagons or custom polygons via `cnefe_counts()`, and computes land-use mix indices with `compute_lumi()`. This includes conventional indices such as Entropy Index, Herfindahl-Hirschman Index, and the Balance Index as well as the adapted Herfindahl-Hirschman Index and the Bidirectional Global-centered Balance Index proposed by [Pedreira Jr et al. (2025)](https://www.researchgate.net/publication/398588228_Measuring_land-use_mix_with_address-level_census_data).
+
+One of the most powerful features is dasymetric interpolation through `tracts_to_h3()` and `tracts_to_polygon()`. These functions redistribute census tract variables (such as population and income) to other spatial units using CNEFE dwelling points as ancillary data, producing far more realistic estimates than simple areal weighting. This makes it straightforward to map socioeconomic indicators at the neighborhood or hexagonal grid level.
+
+Under the hood, **{cnefetools}** leverages [DuckDB](https://duckdb.org/) with its spatial, H3, and zipfs extensions to perform spatial joins and aggregations efficiently, achieving speedups of up to **20x** over pure-R code depending on the geospatialdata structure. A pure-R fallback is also available for users who prefer not to depend on DuckDB. To get started, simply run `install.packages("cnefetools")`. You can find the source code on [GitHub](https://github.com/pedreirajr/cnefetools) and explore detailed vignettes with worked examples on the [package website](https://pedreirajr.github.io/cnefetools/).

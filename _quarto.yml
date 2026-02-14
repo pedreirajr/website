@@ -6,7 +6,7 @@ project:
     - "posts/**/*.qmd"
 
 website:
-  title: "Jorge Ubirajara Pedreira Junior"
+  title: "🚄 Jorge Ubirajara Pedreira Junior"
   site-url: https://pedreirajr.github.io/website
   search: true
   open-graph: true
@@ -25,11 +25,11 @@ website:
       - icon: github
         href: https://github.com/pedreirajr
       - icon: youtube
-        href: https://youtube.com
+        href: https://www.youtube.com/@jorge.ubirajara
       - icon: linkedin
-        href: https://linkedin.com
+        href: https://www.linkedin.com/in/jorgeubirajara/
       - text: Lattes
-        href: http://lattes.cnpq.br
+        href: http://lattes.cnpq.br/7602862678306492
   page-footer:
     center: |
       Jorge Ubirajara Pedreira Junior | Powered by [Quarto](https://quarto.org)

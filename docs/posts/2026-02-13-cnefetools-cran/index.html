@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-02-13">
-<meta name="description" content="O pacote cnefetools foi publicado no CRAN, facilitando o acesso e a manipulação dos dados do CNEFE (Cadastro Nacional de Endereços para Fins Estatísticos) diretamente no R.">
 
-<title>cnefetools no CRAN: ferramentas para o Cadastro Nacional de Endereços – Jorge Ubirajara Pedreira Junior</title>
+<title>{cnefetools} package is live on CRAN! – Jorge Ubirajara Pedreira Junior</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,9 +76,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="cnefetools no CRAN: ferramentas para o Cadastro Nacional de Endereços – Jorge Ubirajara Pedreira Junior">
-<meta property="og:description" content="O pacote cnefetools foi publicado no CRAN, facilitando o acesso e a manipulação dos dados do CNEFE (Cadastro Nacional de Endereços para Fins Estatísticos) diretamente no R.">
-<meta property="og:image" content="https://pedreirajr.github.io/website/images/cnefetools-hex.png">
+<meta property="og:title" content="{cnefetools} package is live on CRAN! – Jorge Ubirajara Pedreira Junior">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://pedreirajr.github.io/website/posts/2026-02-13-cnefetools-cran/img/cnefetools-hex.png">
 <meta property="og:site_name" content="Jorge Ubirajara Pedreira Junior">
 <meta property="og:image:height" content="512">
 <meta property="og:image:width" content="512">
@@ -160,18 +159,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">cnefetools no CRAN: ferramentas para o Cadastro Nacional de Endereços</h1>
+<h1 class="title">{cnefetools} package is live on CRAN!</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Packages</div>
     <div class="quarto-category">Datasets</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    O pacote cnefetools foi publicado no CRAN, facilitando o acesso e a manipulação dos dados do CNEFE (Cadastro Nacional de Endereços para Fins Estatísticos) diretamente no R.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -192,7 +186,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>O pacote <strong>cnefetools</strong> acaba de ser publicado no <a href="https://cran.r-project.org/package=cnefetools">CRAN</a>, tornando mais acessível o trabalho com os dados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE). O pacote oferece funções para download, leitura e tratamento dos microdados do CNEFE, permitindo que pesquisadores e analistas integrem facilmente essas informações geográficas em seus fluxos de trabalho no R. Para instalar, basta rodar <code>install.packages("cnefetools")</code>. O código-fonte está disponível no <a href="https://github.com/pedreirajr/cnefetools">GitHub</a>.</p>
+<p>The <strong>{cnefetools}</strong> R package is now available on <a href="https://cran.r-project.org/package=cnefetools">CRAN</a>. It provides an end-to-end workflow for accessing and analyzing address-level data from the 2022 Brazilian CNEFE (<em>Cadastro Nacional de Endereços para Fins Estatísticos</em>), released by IBGE. With <code>read_cnefe()</code>, you can download and read municipality-level CNEFE data as either an Arrow table for fast in-memory operations or as an <code>sf</code> spatial object ready for mapping and spatial analysis. The package also aggregates address counts by establishment and dwelling types to H3 hexagons or custom polygons via <code>cnefe_counts()</code>, and computes land-use mix indices with <code>compute_lumi()</code>. This includes conventional indices such as Entropy Index, Herfindahl-Hirschman Index, and the Balance Index as well as the adapted Herfindahl-Hirschman Index and the Bidirectional Global-centered Balance Index proposed by <a href="https://www.researchgate.net/publication/398588228_Measuring_land-use_mix_with_address-level_census_data">Pedreira Jr et al.&nbsp;(2025)</a>.</p>
+<p>One of the most powerful features is dasymetric interpolation through <code>tracts_to_h3()</code> and <code>tracts_to_polygon()</code>. These functions redistribute census tract variables (such as population and income) to other spatial units using CNEFE dwelling points as ancillary data, producing far more realistic estimates than simple areal weighting. This makes it straightforward to map socioeconomic indicators at the neighborhood or hexagonal grid level.</p>
+<p>Under the hood, <strong>{cnefetools}</strong> leverages <a href="https://duckdb.org/">DuckDB</a> with its spatial, H3, and zipfs extensions to perform spatial joins and aggregations efficiently, achieving speedups of up to <strong>20x</strong> over pure-R code depending on the geospatialdata structure. A pure-R fallback is also available for users who prefer not to depend on DuckDB. To get started, simply run <code>install.packages("cnefetools")</code>. You can find the source code on <a href="https://github.com/pedreirajr/cnefetools">GitHub</a> and explore detailed vignettes with worked examples on the <a href="https://pedreirajr.github.io/cnefetools/">package website</a>.</p>
 
 
 
