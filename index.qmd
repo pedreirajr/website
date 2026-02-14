@@ -1,5 +1,5 @@
 ---
-title: "Jorge Ubirajara Pedreira Junior"
+title: ""
 listing:
   contents: posts
   sort: "date desc"
@@ -7,3 +7,15 @@ listing:
   categories: true
   fields: [title, date, categories, description]
 ---
+
+::::: profile-section
+::: profile-photo
+![](images/profile.jpeg)
+:::
+
+::: profile-text
+## Jorge Ubirajara Pedreira Junior
+
+I'm an Assistant Professor at the Federal University of Bahia ([UFBA](https://ufba.br/)) and hold a PhD in Transportation Engineering from University of São Paulo ([USP](https://www5.usp.br/)). My research sits at the intersection of Geospatial Analytics, Urban Data Science, and Applied Statistics, with applications in Transportation Planning and Policy. I also develop open source tools in R to support reproducible research workflows. Learn more about my [background](about.qmd), explore my [publications](publications.qmd), or check out the [code & data](codeanddata.qmd) behind my research.
+:::
+:::::

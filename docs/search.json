@@ -65,9 +65,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Jorge Ubirajara Pedreira Junior",
+    "title": "🚄 Jorge Ubirajara Pedreira Junior",
     "section": "",
-    "text": "{cnefetools} package is live on CRAN!\n\n\n\nPackages\n\nDatasets\n\n\n\n\n\n\n\nFeb 13, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "I’m an Assistant Professor at the Federal University of Bahia (UFBA) and hold a PhD in Transportation Engineering from University of São Paulo (USP). My research sits at the intersection of Geospatial Analytics, Urban Data Science, and Applied Statistics, with applications in Transportation Planning and Policy. I also develop open source tools in R to support reproducible research workflows. Learn more about my background, explore my publications, or check out the code & data behind my research."
   },
   {
     "objectID": "posts/cnefetools-cran/index.html",
@@ -82,5 +82,26 @@
     "title": "{cnefetools} package is live on CRAN!",
     "section": "",
     "text": "The {cnefetools} R package is now available on CRAN. It provides an end-to-end workflow for accessing and analyzing address-level data from the 2022 Brazilian CNEFE (Cadastro Nacional de Endereços para Fins Estatísticos), released by IBGE. With read_cnefe(), you can download and read municipality-level CNEFE data as either an Arrow table for fast in-memory operations or as an sf spatial object ready for mapping and spatial analysis. The package also aggregates address counts by establishment and dwelling types to H3 hexagons or custom polygons via cnefe_counts(), and computes land-use mix indices with compute_lumi(). This includes conventional indices such as Entropy Index, Herfindahl-Hirschman Index, and the Balance Index as well as the adapted Herfindahl-Hirschman Index and the Bidirectional Global-centered Balance Index proposed by Pedreira Jr et al. (2025).\nOne of the most powerful features is dasymetric interpolation through tracts_to_h3() and tracts_to_polygon(). These functions redistribute census tract variables (such as population and income) to other spatial units using CNEFE dwelling points as ancillary data, producing far more realistic estimates than simple areal weighting. This makes it straightforward to map socioeconomic indicators at the neighborhood or hexagonal grid level.\nUnder the hood, {cnefetools} leverages DuckDB with its spatial, H3, and zipfs extensions to perform spatial joins and aggregations efficiently, achieving speedups of up to 20x over pure-R code depending on the geospatialdata structure. A pure-R fallback is also available for users who prefer not to depend on DuckDB. To get started, simply run install.packages(\"cnefetools\"). You can find the source code on GitHub and explore detailed vignettes with worked examples on the package website."
+  },
+  {
+    "objectID": "index.html#jorge-ubirajara-pedreira-junior",
+    "href": "index.html#jorge-ubirajara-pedreira-junior",
+    "title": "🚄 Jorge Ubirajara Pedreira Junior",
+    "section": "",
+    "text": "I’m an Assistant Professor at the Federal University of Bahia (UFBA) and hold a PhD in Transportation Engineering from University of São Paulo (USP). My research sits at the intersection of Geospatial Analytics, Urban Data Science, and Applied Statistics, with applications in Transportation Planning and Policy. I also develop open source tools in R to support reproducible research workflows. Learn more about my background, explore my publications, or check out the code & data behind my research."
+  },
+  {
+    "objectID": "codeanddata.html",
+    "href": "codeanddata.html",
+    "title": "R Packages",
+    "section": "",
+    "text": "Pacote R para download, leitura e tratamento dos microdados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE).\nFuncionalidades principais:\n\nDownload automatizado dos arquivos do CNEFE\nLeitura e parsing dos microdados\nFerramentas de geocodificação e tratamento de endereços\n\nGitHub CRAN"
+  },
+  {
+    "objectID": "codeanddata.html#cnefetools",
+    "href": "codeanddata.html#cnefetools",
+    "title": "R Packages",
+    "section": "",
+    "text": "Pacote R para download, leitura e tratamento dos microdados do Cadastro Nacional de Endereços para Fins Estatísticos (CNEFE).\nFuncionalidades principais:\n\nDownload automatizado dos arquivos do CNEFE\nLeitura e parsing dos microdados\nFerramentas de geocodificação e tratamento de endereços\n\nGitHub CRAN"
   }
 ]

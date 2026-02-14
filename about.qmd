@@ -2,7 +2,7 @@
 title: "About"
 about:
   template: trestles
-  image: profile.jpg
+  image: images/aboutpic.jpeg
   image-shape: round
   links:
     - icon: github
@@ -10,12 +10,12 @@ about:
       href: https://github.com/pedreirajr
     - icon: youtube
       text: YouTube
-      href: https://youtube.com
+      href: https://www.youtube.com/@jorge.ubirajara
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/jorgeubirajara/m
     - text: Lattes
-      href: http://lattes.cnpq.br
+      href: http://lattes.cnpq.br/7602862678306492
 ---
 
 ## Sobre mim
@@ -24,10 +24,10 @@ Placeholder: escreva aqui um currículo informal — quem você é, o que pesqui
 
 ## Formação
 
-**Instituição** | Cidade, Estado\
-Título do grau | Ano início -- Ano fim
+**Instituição** \| Cidade, Estado\
+Título do grau \| Ano início -- Ano fim
 
 ## Experiência
 
-**Instituição/Empresa** | Cidade, Estado\
-Cargo/Função | Ano início -- Presente
+**Instituição/Empresa** \| Cidade, Estado\
+Cargo/Função \| Ano início -- Presente

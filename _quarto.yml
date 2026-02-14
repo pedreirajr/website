@@ -14,13 +14,13 @@ website:
     background: primary
     left:
       - href: index.qmd
-        text: Home
+        text: "🏠 Home"
       - href: publications.qmd
-        text: Publications
-      - href: packages.qmd
-        text: Packages
+        text: "📝 Publications"
+      - href: codeanddata.qmd
+        text: "💻 Code and Data"
       - href: about.qmd
-        text: About
+        text: "👨🏻‍🏫 About me"
     right:
       - icon: github
         href: https://github.com/pedreirajr

@@ -1,8 +1,34 @@
-/* Fotos redondas */
-.rounded-photo {
+/* Profile section - home page */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+  }
+
+.profile-photo img {
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
+
+.profile-text h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 576px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 
 /* Card hover effect */
 .quarto-grid-item:hover {
