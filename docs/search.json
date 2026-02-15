@@ -46,28 +46,14 @@
     "href": "about.html",
     "title": "🚆 Jorge Ubirajara Pedreira Junior",
     "section": "",
-    "text": "Placeholder: escreva aqui um currículo informal — quem você é, o que pesquisa, seus interesses acadêmicos e pessoais."
+    "text": "My name is Jorge Ubirajara and I’m an Assistant Professor at the Department of Transportation Engineering and Geodesy from the Federal University of Bahia (UFBA), Brazil, where I’ve been since 2016. I hold a PhD in Transportation Engineering from the University of São Paulo (USP), where I studied travel behavior by longitudinally tracking individuals across Brazil regarding their mobility choices and physical and virtual accessibility conditions. I’m also a vice leader of the CETRAMA research group and have experience in consulting and technical cooperation with the public sector at both municipal and state levels, helping bridge the gap between research and practice.\nMy research agenda covers topics such as travel behavior, urban accessibility, health-related mobility, humanitarian logistics, and transport resilience against climate hazards. On the methodological side, I work with a toolkit that includes classical statistical methods, machine learning models, geostatistics, network modeling, mathematical optimization, and simulation.\nI’m a strong advocate for open-source tools and reproducible research workflows. I develop R packages such as {cnefetools}, for working with Brazilian Census address data; {tripdistmodels}, for trip distribution modeling; and {susflows}, currently under development. I’m also passionate about Data Science Education and am currently writing a textbook to support my courses, aiming to make quantitative methods more accessible to students in engineering and urban planning.\nWhen I’m not working, you’ll find me doing amateur astronomy with my 200mm Dobsonian telescope and 40x12 binoculars, drumming (my neighbors used to hate me), or daydreaming about trains and railways."
   },
   {
-    "objectID": "about.html#background",
-    "href": "about.html#background",
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
     "title": "🚆 Jorge Ubirajara Pedreira Junior",
     "section": "",
-    "text": "Placeholder: escreva aqui um currículo informal — quem você é, o que pesquisa, seus interesses acadêmicos e pessoais."
-  },
-  {
-    "objectID": "about.html#formação",
-    "href": "about.html#formação",
-    "title": "🚆 Jorge Ubirajara Pedreira Junior",
-    "section": "Formação",
-    "text": "Formação\nInstituição | Cidade, Estado\nTítulo do grau | Ano início – Ano fim"
-  },
-  {
-    "objectID": "about.html#experiência",
-    "href": "about.html#experiência",
-    "title": "🚆 Jorge Ubirajara Pedreira Junior",
-    "section": "Experiência",
-    "text": "Experiência\nInstituição/Empresa | Cidade, Estado\nCargo/Função | Ano início – Presente"
+    "text": "My name is Jorge Ubirajara and I’m an Assistant Professor at the Department of Transportation Engineering and Geodesy from the Federal University of Bahia (UFBA), Brazil, where I’ve been since 2016. I hold a PhD in Transportation Engineering from the University of São Paulo (USP), where I studied travel behavior by longitudinally tracking individuals across Brazil regarding their mobility choices and physical and virtual accessibility conditions. I’m also a vice leader of the CETRAMA research group and have experience in consulting and technical cooperation with the public sector at both municipal and state levels, helping bridge the gap between research and practice.\nMy research agenda covers topics such as travel behavior, urban accessibility, health-related mobility, humanitarian logistics, and transport resilience against climate hazards. On the methodological side, I work with a toolkit that includes classical statistical methods, machine learning models, geostatistics, network modeling, mathematical optimization, and simulation.\nI’m a strong advocate for open-source tools and reproducible research workflows. I develop R packages such as {cnefetools}, for working with Brazilian Census address data; {tripdistmodels}, for trip distribution modeling; and {susflows}, currently under development. I’m also passionate about Data Science Education and am currently writing a textbook to support my courses, aiming to make quantitative methods more accessible to students in engineering and urban planning.\nWhen I’m not working, you’ll find me doing amateur astronomy with my 200mm Dobsonian telescope and 40x12 binoculars, drumming (my neighbors used to hate me), or daydreaming about trains and railways."
   },
   {
     "objectID": "codeanddata.html",
