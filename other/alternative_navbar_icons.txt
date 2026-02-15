@@ -1,0 +1,15 @@
+navbar:
+    background: primary
+    right:
+      - href: index.qmd
+        text: Home
+        icon: house-door
+      - href: publications.qmd
+        text: Publications
+        icon: file-earmark-text
+      - href: codeanddata.qmd
+        text: Code and Data
+        icon: code-slash
+      - href: about.qmd
+        text: About me
+        icon: person-bounding-box
