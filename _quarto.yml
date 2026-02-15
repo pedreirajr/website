@@ -18,7 +18,7 @@ website:
       - href: publications.qmd
         text: "📝 Publications"
       - href: codeanddata.qmd
-        text: "💻 Code and Data"
+        text: <i class="bi bi-code-slash"></i> Code and Data
       - href: about.qmd
         text: "👨🏻‍🏫 About me"
   page-footer:
