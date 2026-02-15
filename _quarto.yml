@@ -14,11 +14,12 @@ website:
     background: primary
     right:
       - href: index.qmd
-        text: "🏠 Home"
+        text: Home
+        icon: house-door
       - href: publications.qmd
         text: "📝 Publications"
       - href: codeanddata.qmd
-        text: <i class="bi bi-code-slash"></i> Code and Data
+        text: "💻 Code and Data"
       - href: about.qmd
         text: "👨🏻‍🏫 About me"
   page-footer:
