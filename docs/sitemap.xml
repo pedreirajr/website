@@ -2,30 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pedreirajr.github.io/website/publications.html</loc>
-    <lastmod>2026-02-15T20:30:25.048Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedreirajr.github.io/website/packages.html</loc>
-    <lastmod>2026-02-14T11:38:38.329Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedreirajr.github.io/website/about.html</loc>
-    <lastmod>2026-02-15T19:55:56.495Z</lastmod>
+    <lastmod>2026-02-15T21:47:14.852Z</lastmod>
   </url>
   <url>
     <loc>https://pedreirajr.github.io/website/index.html</loc>
     <lastmod>2026-02-15T19:28:12.415Z</lastmod>
   </url>
   <url>
-    <loc>https://pedreirajr.github.io/website/posts/cnefetools-cran/index.html</loc>
-    <lastmod>2026-02-14T11:32:28.756Z</lastmod>
+    <loc>https://pedreirajr.github.io/website/about.html</loc>
+    <lastmod>2026-02-15T19:55:56.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedreirajr.github.io/website/codeanddata.html</loc>
+    <lastmod>2026-02-15T21:53:57.792Z</lastmod>
   </url>
   <url>
     <loc>https://pedreirajr.github.io/website/posts/2026-02-13-cnefetools-cran/index.html</loc>
     <lastmod>2026-02-15T12:54:17.960Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedreirajr.github.io/website/codeanddata.html</loc>
-    <lastmod>2026-02-15T19:50:52.059Z</lastmod>
   </url>
 </urlset>
