@@ -1,4 +1,4 @@
-# <i class="bi bi-box-seam"></i> R packages
+# <i class="bi bi-box-seam"></i>  R packages
 
 ## {cnefetools}
 
@@ -6,6 +6,6 @@
 
 [GitHub](https://github.com/pedreirajr/cnefetools){.btn .btn-outline-primary .btn-sm} [CRAN](https://cran.r-project.org/package=cnefetools){.btn .btn-outline-primary .btn-sm} [Vignettes](https://pedreirajr.github.io/cnefetools/){.btn .btn-outline-primary .btn-sm}
 
-# <i class="bi bi-database"></i> Datasets
+# <i class="bi bi-database"></i>  Datasets
 
-# <i class="bi bi-code-slash"></i> Scripts
+# <i class="bi bi-code-slash"></i>  Scripts
