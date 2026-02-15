@@ -12,7 +12,7 @@ website:
   open-graph: true
   navbar:
     background: primary
-    left:
+    right:
       - href: index.qmd
         text: "🏠 Home"
       - href: publications.qmd
@@ -21,15 +21,6 @@ website:
         text: "💻 Code and Data"
       - href: about.qmd
         text: "👨🏻‍🏫 About me"
-    right:
-      - icon: github
-        href: https://github.com/pedreirajr
-      - icon: youtube
-        href: https://www.youtube.com/@jorge.ubirajara
-      - icon: linkedin
-        href: https://www.linkedin.com/in/jorgeubirajara/
-      - text: Lattes
-        href: http://lattes.cnpq.br/7602862678306492
   page-footer:
     center: |
       Jorge Ubirajara Pedreira Junior | Powered by [Quarto](https://quarto.org)
@@ -40,6 +31,8 @@ format:
       - darkly
       - brand
     css: styles.css
+    include-in-header:
+      - text: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">'
     toc: true
 
 editor: visual

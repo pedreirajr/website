@@ -1,5 +1,4 @@
 ---
-title: "About"
 about:
   template: trestles
   image: images/aboutpic.jpeg
@@ -13,12 +12,12 @@ about:
       href: https://www.youtube.com/@jorge.ubirajara
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/jorgeubirajara/m
+      href: https://www.linkedin.com/in/jorgeubirajara
     - text: Lattes
       href: http://lattes.cnpq.br/7602862678306492
 ---
 
-## Sobre mim
+## Background
 
 Placeholder: escreva aqui um currículo informal — quem você é, o que pesquisa, seus interesses acadêmicos e pessoais.
 
