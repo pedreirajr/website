@@ -6,7 +6,7 @@ project:
     - "posts/**/*.qmd"
 
 website:
-  title: "🚄 Jorge Ubirajara Pedreira Junior"
+  title: '<i class="bi bi-train-front"></i> Jorge Ubirajara Pedreira Junior'
   site-url: https://pedreirajr.github.io/website
   search: true
   open-graph: true
@@ -17,11 +17,14 @@ website:
         text: Home
         icon: house-door
       - href: publications.qmd
-        text: "📝 Publications"
+        text: Publications
+        icon: file-earmark-text
       - href: codeanddata.qmd
-        text: "💻 Code and Data"
+        text: Code and Data
+        icon: code-slash
       - href: about.qmd
-        text: "👨🏻‍🏫 About me"
+        text: About me
+        icon: person-bounding-box
   page-footer:
     center: |
       Jorge Ubirajara Pedreira Junior | Powered by [Quarto](https://quarto.org)
