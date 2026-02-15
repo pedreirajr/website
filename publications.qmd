@@ -1,9 +1,9 @@
 ## Featured papers
 
-- Pedreira Junior, J. U.; PITOMBO, C. S. (2026). Exploring the heterogeneity of changes in work-related mobility patterns throughout the COVID-19 crisis in Brazil: A latent Markov chain analysis of a 3-year panel data. **Travel Behaviour and Society**, v. 42, p. 101160, 2026. [DOI](https://doi.org/10.1016/j.tbs.2025.101160)
+- Pedreira Junior, J. U.; Pitombo, C. S. (2026). Exploring the heterogeneity of changes in work-related mobility patterns throughout the COVID-19 crisis in Brazil: A latent Markov chain analysis of a 3-year panel data. **Travel Behaviour and Society**, v. 42, p. 101160, 2026. [DOI](https://doi.org/10.1016/j.tbs.2025.101160)
 
 
-- Pedreira Junior, J. U.; PITOMBO, C. S. (2024). Unveiling substitution patterns of work trips by teleworking and their associations with physical and virtual accessibility in the Brazilian COVID-19 crisis. **Travel Behaviour and Society**, v. 34, p. 100657 [DOI](https://doi.org/10.1016/j.tbs.2023.100657)
+- Pedreira Junior, J. U.; Pitombo, C. S. (2024). Unveiling substitution patterns of work trips by teleworking and their associations with physical and virtual accessibility in the Brazilian COVID-19 crisis. **Travel Behaviour and Society**, v. 34, p. 100657 [DOI](https://doi.org/10.1016/j.tbs.2023.100657)
 
 
 - de Moraes Tavares, A. L., Furlan, A. P., Fabbri, G. T. P., & Pedreira Junior, J. U. (2025). Soil-aggregate-cement mixtures for base pavement layers: A strength and stiffness characterization. **Transportation Geotechnics**, 50, 101456. [DOI](https://doi.org/10.1016/j.trgeo.2024.101456)
@@ -12,7 +12,7 @@
 - Suzuki Goshima, C. Y., Dias, V. C., Pedreira Junior, J. U., & Pitombo, C. S. (2023). Relationships between teleworking and travel behavior in the Brazilian COVID-19 crisis. **Future Transportation**, 3(2), 739-767. [DOI](https://doi.org/10.3390/futuretransp3020043)
 
 
-- Louro, T. V., Pedreira Junior, J. U., Gardin, G. T. D. O., & da Silva Junior, C. A. P. (2023). Factors influencing lateral distance and speed of motorized vehicles overtaking bicycles. Transportation research record, 2677(7), 51-61. [DOI](https://doi.org/10.1177/03611981221150926)
+- Louro, T. V., Pedreira Junior, J. U., Gardin, G. T. D. O., & da Silva Junior, C. A. P. (2023). Factors influencing lateral distance and speed of motorized vehicles overtaking bicycles. **Transportation Research Record**, 2677(7), 51-61. [DOI](https://doi.org/10.1177/03611981221150926)
 
 
 - Pedreira Junior, J. U., Rodrigues da Silva, A. N., & Pitombo, C. S. (2022). Car-free day on a university campus: determinants of participation and potential impacts on sustainable travel behavior. **Sustainability**, 14(6), 3427. [DOI](https://doi.org/10.3390/su14063427)
