@@ -3,9 +3,10 @@ title: ""
 listing:
   contents: posts
   sort: "date desc"
-  type: grid
+  type: default
   categories: true
-  fields: [title, date, categories, description]
+  fields: [title, date, categories, description, image]
+  max-description-length: 250
 ---
 
 ::::: profile-section
