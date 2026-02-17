@@ -5,6 +5,8 @@ categories: [Packages, Datasets]
 image: img/cnefetools-hex.png
 ---
 
+![](img/cnefetools-hex-sm.png){.float-right-md}
+
 The **{cnefetools}** R package is now available on [CRAN](https://cran.r-project.org/package=cnefetools). It provides an end-to-end workflow for accessing and analyzing address-level data from the 2022 Brazilian CNEFE (*Cadastro Nacional de Endereços para Fins Estatísticos*), released by IBGE. With `read_cnefe()`, you can download and read municipality-level CNEFE data as either an Arrow table for fast in-memory operations or as an `sf` spatial object ready for mapping and spatial analysis. The package also aggregates address counts by establishment and dwelling types to H3 hexagons or custom polygons via `cnefe_counts()`, and computes land-use mix indices with `compute_lumi()`. This includes conventional indices such as Entropy Index, Herfindahl-Hirschman Index, and the Balance Index as well as the adapted Herfindahl-Hirschman Index and the Bidirectional Global-centered Balance Index proposed by [Pedreira Jr et al. (2025)](https://www.researchgate.net/publication/398588228_Measuring_land-use_mix_with_address-level_census_data).
 
 One of the most powerful features is dasymetric interpolation through `tracts_to_h3()` and `tracts_to_polygon()`. These functions redistribute census tract variables (such as population and income) to other spatial units using CNEFE dwelling points as ancillary data, producing far more realistic estimates than simple areal weighting. This makes it straightforward to map socioeconomic indicators at the neighborhood or hexagonal grid level.
