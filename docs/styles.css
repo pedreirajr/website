@@ -41,8 +41,4 @@
   font-size: 0.9em;
 }
 
-/* Left-align text in about.qmd  */
-.quarto-about-jolla main.content {
-    text-align: left;
-  }
 
