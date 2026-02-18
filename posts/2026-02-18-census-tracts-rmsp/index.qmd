@@ -1,0 +1,117 @@
+---
+title: "Aggregating census tract variables to traffic zones in the São Paulo Metropolitan Region"
+date: "2026-02-18"
+categories: [Packages, Spatial Analysis]
+---
+
+Many spatial analyses require socioeconomic or demographic data at a geographic unit that does not match the one in which it was originally collected. This is a particularly common challenge in **transportation planning**, where the unit of analysis is the traffic zone, a spatial unit whose boundaries often do not coincide with those of census tracts.
+
+Traffic zone delineation follows design rules aimed at keeping intrazonal trips (trips that both start and end within the same zone) below a threshold — typically around 15% of all trips produced by that zone. This constraint, among others, often results in zone boundaries that do not coincide with census tract boundaries. As a result, analysts who need census-derived variables (population, income, racial composition, etc.) at the traffic zone level must transfer them from tracts to zones.
+
+The most straightforward transfer method is **areal interpolation**: the value assigned to a target polygon is proportional to the share of each source tract's area it contains (i.e., if a zone covers 30% of a tract's area, it receives 30% of that tract's total). The implicit assumption is that the variable of interest is uniformly distributed across the tract. In practice, however, population is rarely uniform — it concentrates along streets, in residential blocks, and away from parks, water bodies, or industrial areas. Applying areal weighting in such settings introduces systematic errors that grow with the mismatch between source and target geometries.
+
+**Dasymetric interpolation** addresses this by incorporating auxiliary data that captures the spatial distribution of the variable within each source unit. For population-related variables, the natural choice is the location of private households: rather than spreading a tract's population uniformly across its area, we distribute it equally among its registered dwellings and then aggregate by target polygon. This is precisely the data provided by the Brazilian CNEFE (*Cadastro Nacional de Endereços para Fins Estatísticos*), and it is what the `tracts_to_polygon()` function in `{cnefetools}` uses under the hood. The two-stage procedure for a count variable (e.g., number of residents in private permanent households) is illustrated below.
+
+![](img/dasyinter.png)
+
+For **average variables** (e.g., average household head income), the procedure differs slightly: rather than dividing a tract's total by the number of dwellings, each dwelling is simply assigned the tract's average value directly. When aggregating to the target polygon, it receives the average of all assigned dwellings within it.
+
+In a [previous vignette](https://pedreirajr.github.io/cnefetools/articles/tracts_to.html) I demonstrated this workflow for the **municipality of São Paulo**. Here I extend it to the entire **São Paulo Metropolitan Region (RMSP)**, which spans 39 municipalities. Because each traffic zone belongs entirely to one municipality, we call `tracts_to_polygon()` once per municipality with its corresponding zones and bind the results at the end.[^1]
+
+[^1]: In a future version of `{cnefetools}` we intend to provide interpolation functions that operate independently of municipality boundaries, removing the need to iterate over municipalities manually.
+
+## Setup
+
+```{r, warning = F, results = 'hide', message = F}
+library(cnefetools)
+library(odbr)
+library(geobr)
+library(sf)
+library(dplyr)
+library(purrr)
+library(mapview)
+```
+
+## Traffic zones
+
+The traffic zones for the RMSP come from the 2017 Origin-Destination survey conducted by Metrô São Paulo, available through the [`{odbr}`](https://github.com/hsvab/odbr) package. We project to SIRGAS 2000 / UTM Zone 23S (EPSG 31983), the appropriate projected CRS for the São Paulo region.
+
+```{r, eval = FALSE}
+zones <- read_map(
+  city      = "Sao Paulo",
+  year      = 2017,
+  harmonize = FALSE,
+  geometry  = "zone"
+) |>
+  st_transform(31983)
+```
+
+## RMSP municipalities
+
+We use [`{geobr}`](https://github.com/ipeaGIT/geobr) to obtain the municipality codes that make up the RMSP and then retrieve their geometries via `read_municipality()`.
+
+```{r, eval = FALSE}
+rmsp_codes <- read_metro_area(year = 2018) |>
+  filter(name_metro == "RM São Paulo") |>
+  pull(code_muni)
+
+rmsp_munis <- read_municipality(code_muni = "SP", year = 2018, simplified = FALSE) |>
+  filter(code_muni %in% rmsp_codes) |>
+  st_transform(31983)
+```
+
+## Aggregating census tract variables to traffic zones
+
+For each municipality we filter the zones that fall within it, then call `tracts_to_polygon()` to download the CNEFE data, distribute each tract's `pop_ph` count (number of residents in private permanent households) equally among the CNEFE dwelling addresses within the tracts, and then aggregate to those zones. *(Note: the full loop took approximately 4 minutes to complete on a 14-core, 20-thread CPU — 13th Gen Intel Core i9-13900H, 2.60 GHz — with 32 GB of RAM running Windows 11)*
+
+```{r, eval = FALSE}
+results <- map(rmsp_codes, function(code) {
+
+  muni_poly  <- rmsp_munis[rmsp_munis$code_muni == code, ]
+  muni_zones <- st_filter(zones, muni_poly)
+
+  tracts_to_polygon(
+    code_muni = code,
+    polygon   = muni_zones,
+    vars      = "pop_ph",
+    verbose   = F
+  )
+
+})
+
+zones_final <- bind_rows(results)
+```
+
+```{r, echo = FALSE}
+zones_final <- readRDS("data/zones_final.rds")
+```
+
+## Map
+
+The map below displays estimated **population density** (residents in private permanent households per hectare) by traffic zone across the RMSP. The contrast between the dense urban core of São Paulo and the more sparsely populated peripheral municipalities is immediately visible, as are the pockets of high density scattered throughout the metropolitan fringe. Click on any zone to inspect its values.
+
+```{r}
+zones_final <- zones_final |>
+  mutate(
+    area_ha     = as.numeric(st_area(zones_final)) / 10000, # Area in hectares (ha)
+    pop_density = round(pop_ph / area_ha,3)
+  )
+
+mapview(zones_final, zcol = "pop_density", layer.name = "Density (pop/ha)")
+```
+
+## Conclusions
+
+The workflow presented here is straightforward but broadly applicable: any set of polygon boundaries can serve as the target geometry in `tracts_to_polygon()`, as long as a municipality code is available to anchor the CNEFE download. This makes dasymetric interpolation with `{cnefetools}` a general-purpose tool for transferring census variables to the spatial units that matter for each domain of analysis. Some practical examples:
+
+-   **Public health**: the same approach can be used to estimate population counts and socioeconomic indicators for health districts (*distritos sanitários*) or catchment areas of primary care facilities, inputs that are essential for equity analyses and resource allocation;
+
+-   **Education**: school districts or the coverage areas of regional education offices can be populated with school-age cohort data directly from the census.
+
+-   **Urban planning**: administrative subprefectures, special interest zones, or custom planning units can receive population and income estimates without resorting to areal weighting;
+
+-   **Environmental studies**: watersheds, protected areas, or flood-risk zones can be enriched with demographic data to assess exposure and vulnerability;
+
+-   **Security and emergency management**: police precincts or civil defense response zones can be characterized with population density and demographic composition.
+
+In all these cases, the underlying logic is the same: census tracts are the source, CNEFE dwellings are the bridge, and the analyst's polygon of interest is the target. The only requirement is that the target polygons respect municipal boundaries, a constraint that future versions of `{cnefetools}` aim to lift.
