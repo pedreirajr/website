@@ -30,6 +30,18 @@
 }
 
 
+/* Section divider */
+.section-divider {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
 /* Card hover effect */
 .quarto-grid-item:hover {
   box-shadow: 0 4px 12px rgba(27, 42, 74, 0.15);
