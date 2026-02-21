@@ -1,4 +1,4 @@
-# <i class="bi bi-box-seam"></i>  R packages
+# <i class="bi bi-box-seam"></i> R packages
 
 ## {cnefetools}
 
@@ -8,18 +8,17 @@
 
 ## {tripdistmodels}
 
-![](images/tripdistmodels-hex.png){width="150" style="float: left; margin-right: 15px; margin-bottom: 10px;"} **{tripdistmodels}** is an R package for trip distribution modeling in transportation planning. It implements the two classic workhorses of the four-step travel demand model's distribution step: `furness()`, which applies Iterative Proportional Fitting (IPF) to balance an existing seed origin-destination (OD) matrix to specified production and attraction targets; and `gravit()`, which synthesizes OD matrices from scratch using a doubly constrained gravity model with calibrated deterrence functions. Three deterrence forms are supported (exponential, power, and combined), alongside three parameter estimation strategies: Poisson log-likelihood maximization (via L-BFGS-B), the Hyman heuristic for exponential deterrence, and fixed user-supplied values. Both functions accept OD and cost data as square matrices or long tables, making the package flexible for different data workflows common in transportation planning practice.
+![](images/tripdistmodels-hex.png){width="150" style="float: left; margin-right: 15px; margin-bottom: 10px;"} **{tripdistmodels}** is an R package for trip distribution modeling in transportation planning, which implements two classic workhorses of the four-step travel demand model's distribution step. With `furness()`, you can use Iterative Proportional Fitting (IPF) to rebalance a seed OD matrix to given production and attraction totals, whereas `gravit()` synthesizes OD flows from scratch with a doubly constrained gravity model and calibrated deterrence functions. Three deterrence forms are supported (exponential, power, and combined), alongside three parameter estimation strategies: Poisson log-likelihood maximization (via L-BFGS-B), the Hyman heuristic for exponential deterrence, and fixed user-supplied values. Both functions accept OD and cost data as square matrices or long tables, making the package flexible for different data workflows common in transportation planning practice.
 
 [GitHub](https://github.com/pedreirajr/tripdistmodels){.btn .btn-outline-primary .btn-sm}
 
-# <i class="bi bi-database"></i>  Datasets
+# <i class="bi bi-database"></i> Datasets
 
 ## Hospital admission flows from the Brazilian SUS (2008–2024)
 
 ![](images/data_sih_br.png){width="150" style="float: left; margin-right: 15px; margin-bottom: 10px;"} This dataset compiles inpatient hospital authorization records from Brazil's *Sistema Único de Saúde* (SUS), organized as origin-destination flow tables capturing intercity patient movements across the country's public healthcare network. Covering **2008 to 2024** (17 years) and all Brazilian municipalities, it contains nearly 200 million unique hospitalization records stored in columnar Parquet format (one file per year) alongside aggregated OD flow tables stratified by procedure complexity (medium vs. high) and category (diagnostic, clinical, surgical, and transplants). Supporting files include the R scripts used for data retrieval and processing, municipal health region mapping tables, and geospatial polygon files. The dataset's scale and longitudinal depth make it particularly suited for research on healthcare access, regional health planning, and geographic disparities in the Brazilian public health system.
 
-[Mendeley Data](https://data.mendeley.com/datasets/c7t4xybd6k/1){.btn .btn-outline-primary .btn-sm}
-[Interactive Map](https://rpubs.com/pedreirajr/hospadmflow_br2023){.btn .btn-outline-primary .btn-sm}
+[Mendeley Data](https://data.mendeley.com/datasets/c7t4xybd6k/1){.btn .btn-outline-primary .btn-sm} [Interactive Map](https://rpubs.com/pedreirajr/hospadmflow_br2023){.btn .btn-outline-primary .btn-sm}
 
 ## Origin-Destination Survey of the Salvador Metropolitan Region (2012)
 
@@ -27,7 +26,7 @@
 
 [GitHub](https://github.com/pedreirajr/od_rms_2012){.btn .btn-outline-primary .btn-sm}
 
-# <i class="bi bi-window-sidebar"></i>  Shiny Apps
+# <i class="bi bi-window-sidebar"></i> Shiny Apps
 
 ## DinFerr — Railway Dynamics Simulator
 
@@ -37,7 +36,7 @@
 
 ## EstabGran — Pavement Base Mixture Optimizer
 
-![](images/estabgran.png){width="150" style="float: left; margin-right: 15px; margin-bottom: 10px;"} **EstabGran** is an R Shiny web application for optimizing material dosing in granulometric stabilization of pavement base layers. Given a set of candidate materials (soils and aggregates), the app determines the blend proportions that satisfy Brazilian particle-size distribution requirements at **minimum total cost**, using a Linear Programming model solved via the `lpSolve` package. Users specify up to five materials — each with unit cost, gradation curve (six sieves), liquid limit, and plasticity index — and select a target specification band (curves A–F from the DNIT IPR-719 Pavement Manual) or define custom gradation limits. When a feasible solution exists, the app returns the optimal proportions, the resulting mixture cost in R$/m³, and a particle-size distribution chart of the blend overlaid on the specification envelope to confirm compliance. The app was presented at the 37th ANPET Congress (Santos, 2023).
+![](images/estabgran.png){width="150" style="float: left; margin-right: 15px; margin-bottom: 10px;"} **EstabGran** is an R Shiny web application for optimizing material dosing in granulometric stabilization of pavement base layers. Given a set of candidate materials (soils and aggregates), the app determines the blend proportions that satisfy Brazilian particle-size distribution requirements at **minimum total cost**, using a Linear Programming model solved via the `lpSolve` package. Users specify up to five materials — each with unit cost, gradation curve (six sieves), liquid limit, and plasticity index — and select a target specification band (curves A–F from the DNIT IPR-719 Pavement Manual) or define custom gradation limits. When a feasible solution exists, the app returns the optimal proportions, the resulting mixture cost in R\$/m³, and a particle-size distribution chart of the blend overlaid on the specification envelope to confirm compliance. The app was presented at the 37th ANPET Congress (Santos, 2023).
 
 [Shiny App](https://pedreirajr.shinyapps.io/EstabGran/){.btn .btn-outline-primary .btn-sm} [GitHub](https://github.com/pedreirajr/EstabGran){.btn .btn-outline-primary .btn-sm} [Conference Paper](https://www.researchgate.net/publication/375516275_EstabGran_Uma_aplicacao_web_para_otimizacao_de_misturas_de_bases_de_pavimentos_estabilizadas_granulometricamente){.btn .btn-outline-primary .btn-sm}
 
@@ -53,7 +52,7 @@
 
 [Shiny App](https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4BzSampFSAJmGiGzNu0mNaAEwCiAD1LNlYtR0ZweaOEpEiArrQAEAHgC0TgGbVH2gApQknDsIk5OpNxw8E4AvE48fKwRUZaIiAn8yfDsAOQ+8BA5ArihTgDutBEAslARAFJQ+uzFpd6+WERlIRBhYcT5EOwAjAq4RJ6enHCksU4ALLjhldRwARBw1CFgAPIQ2lCcTtpwTgDC3EQAjvYnHgDijACHnrTETgCSZHDMpLQAbkQhGABMowi0el4fDoOl1Sn0iANhqM4b1UeFApwACTcOa5U4kTg6b4newwKBOP60cnEGBHCiE-bHOlOYgQIKcX4kWAUUhEJxCAVCdgAawA+gArQVCAT8iFo1F-OCvAD0wpgi2gTmuUGoTiIxEYFicpPJfHIhvsqAA5wBjvlMozPOCSPkQPlq-mC9j6UUgM0AXylMpR8qcPKNREOMD49l5hyl7FIotoQbDnoFidFniDGCcAEEvod9k4zd9GJbbURFuTFXICDooMcSnLQ05yccIAzGycTny2vp7dSiIaeScHU9PM6-Zw7cyE-ZRVBU2rldxFgmxUvBTLFSq1SH5ScE5dF6ndwRV4sLJxUHACL8-tyvrntodFQBbgj2OSHCy-bSRk4mqlha1qzoEcjwMwMBuFMQFLi2oYdl2TJMqy7KctABS8umQpipK25htWnCErS1wnGI3yNpG1YssOFhfFqNzxCcnjDmSB5ogcnCkicj5yNezK1vqDZNnSnaiT2kL2AOJaSPYUC0Ic5LzqehErmuuEimpAo7kqF77ohh5aSeW66RS-mXk4163ve-xPuQL5OJozyvHyUD0Ipsmkd-5IHHqez-WhFzkU4qAsIba9totCTgx5Bvjqw6WHSHIpeFjAAEfwEYgF8K8VJKYgRQoqCTjgmEbTQp03Sov0pKDAsnGopwdDHIwnyoLGuT6GaOS4KQGLYgArLkAAy-o6kcppfKBlZOCEXo-n6ZCBtuxROB6xaUlAxUVVFB29Aow24AAzCdp0AAy4EMiwVNoESzECQyXZdACkQJlWCzZ1QiDXsE1Rloq1RIdRAXWkFsvzZng6KSFi3CjTkfjfO-RAAYc-X1lNi0ZkmKbrWmLzQLqCZJtmhHFiB5ZgVWYa0tGEB7T9h2HYzszXU4ZL6LMCic){.btn .btn-outline-primary .btn-sm} [GitHub](https://github.com/pedreirajr/OndasChoqueTrafego){.btn .btn-outline-primary .btn-sm}
 
-# <i class="bi bi-code-slash"></i>  Standalone Scripts
+# <i class="bi bi-code-slash"></i> Standalone Scripts
 
 ## G-SIVAR
 
@@ -65,5 +64,4 @@
 
 ![](images/var_pop_mcz.png){width="150" style="float: left; margin-right: 15px; margin-bottom: 10px;"} This self-contained R script automates the full pipeline from raw data download to an interactive choropleth map of intra-urban demographic change in **Maceió** between the 2010 and 2022 Brazilian censuses. It downloads both IBGE statistical grids (200×200 m cells) directly from the IBGE FTP server, clips them to the municipal boundary retrieved via [`{geobr}`](https://github.com/ipeaGIT/geobr), joins the two grids on the common cell identifier, and computes absolute changes in population and occupied dwellings per cell. The output is a Leaflet map using a diverging red–white–blue palette centered on zero, allowing users to identify at fine spatial resolution which parts of the city grew and which declined over the intercensal period.
 
-[GitHub](https://github.com/pedreirajr/var_pop_mcz){.btn .btn-outline-primary .btn-sm} 
-[Interactive Map](https://rpubs.com/pedreirajr/varpopmcz){.btn .btn-outline-primary .btn-sm}
+[GitHub](https://github.com/pedreirajr/var_pop_mcz){.btn .btn-outline-primary .btn-sm} [Interactive Map](https://rpubs.com/pedreirajr/varpopmcz){.btn .btn-outline-primary .btn-sm}
