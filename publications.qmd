@@ -2,7 +2,7 @@
 
 -   Pedreira Junior, J. U., Pitombo, C. S. (2026). Exploring the heterogeneity of changes in work-related mobility patterns throughout the COVID-19 crisis in Brazil: A latent Markov chain analysis of a 3-year panel data. **Travel Behaviour and Society**, v. 42, p. 101160, 2026. [DOI](https://doi.org/10.1016/j.tbs.2025.101160)
 
--   Firmino, C. R. S., Pedreira Junior, J. U. , Alves, L. R. G., & Esquerre, K. (2026). Data Science in basic education: an evidence-based framework integrating learning and assessment. **Revista de Geopolítica**, 17(1), e1475-e1475. [DOI](https://doi.org/10.56238/revgeov17n1-180)
+-   Firmino, C. R. S., Pedreira Junior, J. U. , Alves, L. R. G., & Esquerre, K. (2026). Data Science in basic education: an evidence-based framework integrating learning and assessment. **Revista de Geopolítica**, 17(1), e1475. [DOI](https://doi.org/10.56238/revgeov17n1-180)
 
 -   de Moraes Tavares, A. L., Furlan, A. P., Fabbri, G. T. P., & Pedreira Junior, J. U. (2025). Soil-aggregate-cement mixtures for base pavement layers: A strength and stiffness characterization. **Transportation Geotechnics**, 50, 101456. [DOI](https://doi.org/10.1016/j.trgeo.2024.101456)
 
