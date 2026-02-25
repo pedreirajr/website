@@ -35,6 +35,14 @@ format:
     css: styles.css
     include-in-header:
       - text: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">'
+    include-after-body:
+      - text: |
+          <script>
+          document.querySelectorAll('a.btn:not([download])').forEach(function(btn) {
+            btn.setAttribute('target', '_blank');
+            btn.setAttribute('rel', 'noopener noreferrer');
+          });
+          </script>
     toc: true
 
 execute:

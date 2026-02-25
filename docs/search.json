@@ -2,16 +2,16 @@
   {
     "objectID": "talks.html",
     "href": "talks.html",
-    "title": " Workshops & Talks",
+    "title": "🚆 Jorge Ubirajara Pedreira Junior",
     "section": "",
-    "text": "This workshop was delivered to the Gamma Research Group on February 25, 2026, and focused on building custom thematic maps in R from scratch. Participants worked through the full cartographic pipeline: reading and manipulating spatial vector and raster data with {sf} and {terra}, retrieving official Brazilian boundaries via {geobr}, and crafting publication-quality choropleth and point maps using {ggplot2} and its spatial extensions. Special attention was given to design choices — color palettes, legend placement, scale bars, and north arrows — that make maps both visually appealing and analytically informative. The session included hands-on exercises with real census and administrative datasets, and participants left with a self-contained R script they could immediately adapt to their own research projects.\nSlides R Script YouTube"
+    "text": "This workshop was delivered to the Gamma Research Group on February 25, 2026, and focused on the dasymetric interpolation functions of the {cnefetools} R package. The session demonstrated how census tract data (which are inherently tied to the geometries of Brazil’s IBGE census tracts) can be reaggregated onto arbitrary spatial units of interest, such as H3 hexagonal grids or user-supplied polygons, using residential address points from the CNEFE as ancillary data.\nSlides R Script YouTube video"
   },
   {
-    "objectID": "talks.html#custom-maps-in-r-workshop-gamma",
-    "href": "talks.html#custom-maps-in-r-workshop-gamma",
-    "title": " Workshops & Talks",
+    "objectID": "talks.html#custom-censitary-maps-with-the-cnefetools-r-package-workshop-gamma",
+    "href": "talks.html#custom-censitary-maps-with-the-cnefetools-r-package-workshop-gamma",
+    "title": "🚆 Jorge Ubirajara Pedreira Junior",
     "section": "",
-    "text": "This workshop was delivered to the Gamma Research Group on February 25, 2026, and focused on building custom thematic maps in R from scratch. Participants worked through the full cartographic pipeline: reading and manipulating spatial vector and raster data with {sf} and {terra}, retrieving official Brazilian boundaries via {geobr}, and crafting publication-quality choropleth and point maps using {ggplot2} and its spatial extensions. Special attention was given to design choices — color palettes, legend placement, scale bars, and north arrows — that make maps both visually appealing and analytically informative. The session included hands-on exercises with real census and administrative datasets, and participants left with a self-contained R script they could immediately adapt to their own research projects.\nSlides R Script YouTube"
+    "text": "This workshop was delivered to the Gamma Research Group on February 25, 2026, and focused on the dasymetric interpolation functions of the {cnefetools} R package. The session demonstrated how census tract data (which are inherently tied to the geometries of Brazil’s IBGE census tracts) can be reaggregated onto arbitrary spatial units of interest, such as H3 hexagonal grids or user-supplied polygons, using residential address points from the CNEFE as ancillary data.\nSlides R Script YouTube video"
   },
   {
     "objectID": "posts/2026-02-18-census-tracts-rmsp/index.html",

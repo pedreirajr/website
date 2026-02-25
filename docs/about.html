@@ -569,6 +569,12 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>
+document.querySelectorAll('a.btn:not([download])').forEach(function(btn) {
+  btn.setAttribute('target', '_blank');
+  btn.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
 
 
 
