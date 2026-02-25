@@ -1,0 +1,7 @@
+# <i class="bi bi-megaphone"></i> Workshops & Talks
+
+## Custom Maps in R (Workshop Gamma)
+
+![](talks/2026-02-25_workshop_gamma/workshop_gamma_20260225.png){width="150" style="float: left; margin-right: 15px; margin-bottom: 10px;"} This workshop was delivered to the **Gamma Research Group** on February 25, 2026, and focused on building custom thematic maps in R from scratch. Participants worked through the full cartographic pipeline: reading and manipulating spatial vector and raster data with `{sf}` and `{terra}`, retrieving official Brazilian boundaries via `{geobr}`, and crafting publication-quality choropleth and point maps using `{ggplot2}` and its spatial extensions. Special attention was given to design choices — color palettes, legend placement, scale bars, and north arrows — that make maps both visually appealing and analytically informative. The session included hands-on exercises with real census and administrative datasets, and participants left with a self-contained R script they could immediately adapt to their own research projects.
+
+[Slides](talks/2026-02-25_workshop_gamma/Mapas%20personalizados%20(Workshop%20Gamma).pdf){.btn .btn-outline-primary .btn-sm} [R Script](talks/2026-02-25_workshop_gamma/script_workshop.R){.btn .btn-outline-primary .btn-sm} [YouTube](https://www.youtube.com/watch?v=cxetuzCoHUk){.btn .btn-outline-primary .btn-sm}
