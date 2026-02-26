@@ -33,7 +33,7 @@ website:
       reactions-enabled: true
       loading: lazy
       input-position: top
-      theme: noborder_dark
+      theme: light
 
   page-footer:
     center: |
