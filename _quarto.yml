@@ -23,18 +23,6 @@ website:
         text: "📣 Talks"
       - href: about.qmd
         text: "👨🏻‍🏫 About me"
-  comments:
-    giscus:
-      repo: pedreirajr/website
-      repo-id: R_kgDORP2Xkw
-      category: Announcements
-      category-id: DIC_kwDORP2Xk84C3Rgz
-      mapping: pathname
-      reactions-enabled: true
-      loading: lazy
-      input-position: top
-      theme: light
-
   page-footer:
     center: |
       Jorge Ubirajara Pedreira Junior | Powered by [Quarto](https://quarto.org)
