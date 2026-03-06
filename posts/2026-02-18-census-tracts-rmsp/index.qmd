@@ -2,6 +2,7 @@
 title: "Aggregating census tract variables to traffic zones in the São Paulo Metropolitan Region"
 date: "2026-02-18"
 categories: [Packages, Spatial Analysis]
+image: img/dasyinter.png
 ---
 
 Many spatial analyses require socioeconomic or demographic data at a geographic unit that does not match the one in which it was originally collected. This is a particularly common challenge in **transportation planning**, where the unit of analysis is the traffic zone, a spatial unit whose boundaries often do not coincide with those of census tracts.

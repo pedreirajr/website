@@ -1,0 +1,138 @@
+---
+title: "{cnefetools} v0.2.3: border hexagons and smarter caching"
+date: "2026-03-06"
+categories: [Packages, Spatial Analysis]
+image: img/comp_v023_v022.png
+---
+
+A new version of `{cnefetools}` (v0.2.3) is now on CRAN. This release fixes a silent coverage gap in the H3 grid builder and adds caching to the two most compute-intensive functions in the package.
+
+### The problem with versions before v0.2.3
+
+When you call any of the analytical functions that require a H3 hexagonal grid for a municipality, the package needs to decide which H3 hexagons belong to that municipality. In previous versions, this was done via `h3jsr::polygon_to_cells()`, which uses a **centroid-based rule**: a hexagon is included only if its centroid falls inside the polygon. Hexagons that cross the municipal boundary were silently excluded if their centroid happened to fall just outside, although covering real addresses.
+
+The fix in v0.2.3 is straightforward: after generating the initial grid, the function finds immediate neighbours of every hexagon in the grid, checks which of those neighbours intersect the municipal boundary via `sf::st_intersects()`, and adds any missing ones. This is an additive-only correction, as it never drops hexagons, only adds the ones that were being overlooked.
+
+Let's see how the two approaches compare!
+
+### Setup
+
+```{r, warning = FALSE, results = 'hide', message = FALSE}
+library(cnefetools)
+library(geobr)
+library(sf)
+library(dplyr)
+library(h3jsr)
+library(mapview)
+library(leafsync)
+```
+
+### v0.2.2 vs v0.2.3: a concrete comparison
+
+To illustrate the difference, we use **Salvador (BA)** at H3 resolution 7 (`code_muni = 2927408`). The strategy is as follows: we run `tracts_to_h3()` with v0.2.3 to obtain the corrected grid, then reconstruct what v0.2.2 would have returned by applying the old centroid-based rule directly, i.e., calling `h3jsr::polygon_to_cells()` on the municipal boundary and keeping only the hexagons whose IDs appear in that result. This gives us two grids built from exactly the same underlying data, differing only in which boundary hexagons are included.
+
+First, we obtain the v0.2.3 grid and the municipal boundary:
+
+```{r, eval = FALSE}
+hex_v023 <- tracts_to_h3(code_muni = 2927408, h3_resolution = 7, vars = "pop_ph")
+
+boundary <- geobr::read_municipality(code_muni = 2927408, year = 2020, simplified = FALSE) |>
+  sf::st_transform(4326)
+```
+
+Then we simulate the v0.2.2 result by filtering down to only the centroid-based hexagon IDs:
+
+```{r, eval = FALSE}
+old_ids  <- h3jsr::polygon_to_cells(boundary, res = 7, simple = TRUE)[[1]]
+hex_v022 <- hex_v023 |> dplyr::filter(id_hex %in% old_ids)
+```
+
+```{r, echo = FALSE}
+hex_v023 <- readRDS("data/hex_v023.rds")
+hex_v022 <- readRDS("data/hex_v022.rds")
+boundary <- readRDS("data/boundary.rds")
+```
+
+The first pair of maps shows which hexagons each approach returns, overlaid on the municipal boundary. The hexagons that v0.2.2 was missing are visible along the perimeter in the right-hand map:
+```{r}
+m1 <- mapview(hex_v022) + mapview(boundary, col.regions = 'gray90')
+m2 <- mapview(hex_v023) + mapview(boundary, col.regions = 'gray90')
+
+sync(m1, m2)
+```
+
+<div style="height: 20px;"></div>
+
+The second pair of maps shows the impact on population coverage. Both maps display `pop_ph` on a common colour scale so that differences in the estimates are directly comparable. The boundary hexagons added in v0.2.3 carry real population, so their inclusion shifts the totals:
+
+```{r}
+pop_range <- range(
+  c(hex_v022$pop_ph, hex_v023$pop_ph),
+  na.rm = TRUE
+)
+
+m3 <- mapview(hex_v022, zcol = "pop_ph", layer.name = "pop_ph (v0.2.2)",
+              at = seq(pop_range[1], pop_range[2], length.out = 8))
+m4 <- mapview(hex_v023, zcol = "pop_ph", layer.name = "pop_ph (v0.2.3)",
+              at = seq(pop_range[1], pop_range[2], length.out = 8))
+
+sync(m3, m4)
+```
+
+<div style="height: 20px;"></div>
+
+The table below summarizes the numerical differences between the two approaches:
+
+```{r}
+data.frame(
+  Metric    = c("Hexagons", "pop_ph"),
+  `v0.2.2`  = c(
+    nrow(hex_v022),
+    round(sum(hex_v022$pop_ph, na.rm = TRUE))
+  ),
+  `v0.2.3`  = c(
+    nrow(hex_v023),
+    round(sum(hex_v023$pop_ph, na.rm = TRUE))
+  ),
+  Difference = c(
+    nrow(hex_v023) - nrow(hex_v022),
+    round(sum(hex_v023$pop_ph, na.rm = TRUE) - sum(hex_v022$pop_ph, na.rm = TRUE))
+  ),
+  check.names = FALSE
+) |> knitr::kable(format.args = list(big.mark = ","))
+```
+
+The extra hexagons sit along the municipal boundary. By including them, we ensure that every dwelling registered in the CNEFE is captured in the grid, avoiding an undercount of the population.
+
+### A note on border hexagons and neighbouring municipalities
+
+Keep in mind that a border hexagon will often overlap two or more municipalities. The `pop_ph` value assigned to each hexagon reflects only the population of the municipality passed in `code_muni`, given that the dasymetric redistribution is anchored to the tracts and CNEFE dwellings of that municipality alone. A neighbouring municipality processed separately will produce its own hexagons covering the same border area, with its own population estimates. This is expected behaviour, as the hexagon is a spatial carrier, not an exclusive territory.
+
+## Other improvements: caching
+
+`cnefe_counts()` and `compute_lumi()` now accept a `cache` argument (default `TRUE`). On the first call the results are written to disk and subsequent calls with the same inputs skip the download and computation entirely. Moreover, two helper functions let you manage the cache:
+
+-   **`clear_cache_muni()`** — removes cached CNEFE ZIP files, either for a specific municipality or for all municipalities at once.
+-   **`clear_cache_tracts()`** — removes cached census tract Parquet files, either for a specific state (UF) or for all states.
+
+`clear_cache_muni()` accepts an optional municipality code to delete a single ZIP. Without arguments it clears everything:
+
+```{r, eval = FALSE}
+clear_cache_muni()          # delete all cached CNEFE ZIPs
+clear_cache_muni(2919207)   # delete only the ZIP for Lauro de Freitas-BA
+```
+
+`clear_cache_tracts()` works similarly. You can filter by state using a two-letter UF abbreviation, a two-digit numeric state code, or a seven-digit municipality code (resolved to its state automatically):
+
+```{r, eval = FALSE}
+clear_cache_tracts()        # delete all cached census tract Parquets
+clear_cache_tracts("BA")    # delete only the Parquet for Bahia
+clear_cache_tracts(29)      # same, using the numeric state code
+clear_cache_tracts(2919207) # same, using a municipality code
+```
+
+To update {cnefetools} to v0.2.3, run:
+
+```{r, eval = FALSE}
+install.packages("cnefetools")
+```
