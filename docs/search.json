@@ -25,7 +25,7 @@
     "href": "posts/2026-03-06-cnefetools023/index.html",
     "title": "{cnefetools} v0.2.3: border hexagons and smarter caching",
     "section": "",
-    "text": "A new version of {cnefetools} (v0.2.3) is now on CRAN. This release fixes a silent coverage gap in the H3 grid builder and adds caching to the two most compute-intensive functions in the package."
+    "text": "A new version of {cnefetools} (v0.2.3) is now on CRAN. This release fixes a silent coverage gap in the H3 grid builder and adds caching to the cnefe_counts() and compute_lumi() functions."
   },
   {
     "objectID": "posts/2026-03-06-cnefetools023/index.html#other-improvements-caching",

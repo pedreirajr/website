@@ -5,7 +5,7 @@ categories: [Packages, Spatial Analysis]
 image: img/comp_v023_v022.png
 ---
 
-A new version of `{cnefetools}` (v0.2.3) is now on CRAN. This release fixes a silent coverage gap in the H3 grid builder and adds caching to the two most compute-intensive functions in the package.
+A new version of `{cnefetools}` (v0.2.3) is now on CRAN. This release fixes a silent coverage gap in the H3 grid builder and adds caching to the `cnefe_counts()` and `compute_lumi()` functions.
 
 ### The problem with versions before v0.2.3
 
