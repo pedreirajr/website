@@ -142,6 +142,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#cnefetools" id="toc-cnefetools" class="nav-link" data-scroll-target="#cnefetools">{cnefetools}</a></li>
   <li><a href="#tripdistmodels" id="toc-tripdistmodels" class="nav-link" data-scroll-target="#tripdistmodels">{tripdistmodels}</a></li>
+  <li><a href="#geohazards" id="toc-geohazards" class="nav-link" data-scroll-target="#geohazards">{geohazards}</a></li>
   </ul></li>
   <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><i class="bi bi-database"></i> Datasets</a>
   <ul class="collapse">
@@ -180,6 +181,11 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="tripdistmodels">{tripdistmodels}</h2>
 <p><img src="images/tripdistmodels-hex.png" class="img-fluid" style="float: left; margin-right: 15px; margin-bottom: 10px;" width="150"> <strong>{tripdistmodels}</strong> is an R package for trip distribution modeling in transportation planning, which implements two classic workhorses of the four-step travel demand model’s distribution step. With <code>furness()</code>, you can use Iterative Proportional Fitting (IPF) to rebalance a seed OD matrix to given production and attraction totals, whereas <code>gravit()</code> synthesizes OD flows from scratch with a doubly constrained gravity model and calibrated deterrence functions. Three deterrence forms are supported (exponential, power, and combined), alongside three parameter estimation strategies: Poisson log-likelihood maximization (via L-BFGS-B), the Hyman heuristic for exponential deterrence, and fixed user-supplied values. Both functions accept OD and cost data as square matrices or long tables, making the package flexible for different data workflows common in transportation planning practice.</p>
 <p><a href="https://github.com/pedreirajr/tripdistmodels" class="btn btn-outline-primary btn-sm">GitHub</a></p>
+</section>
+<section id="geohazards" class="level2">
+<h2 class="anchored" data-anchor-id="geohazards">{geohazards}</h2>
+<p><img src="images/geohazards-hex.png" class="img-fluid" style="float: left; margin-right: 15px; margin-bottom: 10px;" width="150"> <strong>{geohazards}</strong> is an R package for extracting global data related to climate risk, susceptibility, and vulnerability. It provides a simple interface for accessing remote geospatial datasets (such as flood susceptibility indices, landslide risk maps, and geological hazard layers) directly from R, without manual downloading. The package currently provides <code>get_hand()</code>, which retrieves the GLO-30 HAND (Height Above the Nearest Drainage) raster at 30 m resolution for any polygon supplied by the user. It is actively being expanded with new data sources and functions, and is planned for submission to CRAN.</p>
+<p><a href="https://github.com/pedreirajr/geohazards" class="btn btn-outline-primary btn-sm">GitHub</a></p>
 </section>
 </section>
 <section id="datasets" class="level1">

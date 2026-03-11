@@ -12,6 +12,14 @@
 
 [GitHub](https://github.com/pedreirajr/tripdistmodels){.btn .btn-outline-primary .btn-sm}
 
+## {geohazards}
+
+![](images/geohazards-hex.png){width="150" style="float: left; margin-right: 15px; margin-bottom: 10px;"} **{geohazards}** is an R package for extracting global data related to climate risk, susceptibility, and vulnerability. It provides a simple interface for accessing remote geospatial datasets (such as flood susceptibility indices, landslide risk maps, and geological hazard layers) directly from R, without manual downloading. The package currently provides `get_hand()`, which retrieves the GLO-30 HAND (Height Above the Nearest Drainage) raster at 30 m resolution for any polygon supplied by the user. It is actively being expanded with new data sources and functions, and is planned for submission to CRAN.
+
+
+
+[GitHub](https://github.com/pedreirajr/geohazards){.btn .btn-outline-primary .btn-sm} 
+
 # <i class="bi bi-database"></i> Datasets
 
 ## Hospital admission flows from the Brazilian SUS (2008–2024)
