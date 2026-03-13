@@ -1,0 +1,184 @@
+---
+title: "Agregados por Setores Censitários — Censo 2022 (Portuguese Tutorial)"
+date: "2026-03-12"
+categories: [Spatial Analysis]
+image: img/dom_esg_inadeq.png
+---
+
+O IBGE disponibiliza parte dos resultados do Censo Demográfico em forma de **agregados por setores censitários** por meio de várias tabelas, onde cada linha representa um setor censitário e cada coluna representa uma variável agregada (total de moradores, domicílios, características dos domicílios, renda etc.).
+
+Essas tabelas são organizadas em **arquivos temáticos** (Básico, Domicílio, Entorno, Pessoa, Responsável etc.), e as variáveis são identificadas por códigos. **Sem o dicionário de variáveis não é possível saber o que cada coluna representa.** Portanto, consultar o dicionário é sempre o primeiro passo.
+
+Neste tutorial utilizamos o pacote `censobr` para acessar os dados do **Censo 2022**, o pacote `geobr` para os arquivos geográficos dos setores, e o pacote `mapview` para visualização cartográfica interativa.
+
+------------------------------------------------------------------------
+
+## (0) Instalação e chamada dos pacotes necessários
+
+```{r}
+#| message: false
+#| warning: false
+
+# install.packages(c("censobr", "geobr", "mapview", "tidyverse", "sf"))
+library(tidyverse)
+library(sf)
+library(geobr)
+library(censobr)
+library(mapview)
+```
+
+------------------------------------------------------------------------
+
+## (1) Documentação: dicionário de variáveis
+
+Antes de ler qualquer dado, consulte o dicionário de variáveis para o ano e arquivo temático que deseja utilizar. Ele lista todos os códigos e suas descrições.
+
+```{r}
+#| eval: false
+
+# Dicionário de variáveis dos agregados por setores censitários (2022)
+data_dictionary(year = 2022, dataset = "tracts")
+```
+
+> **Dica:** mantenha o dicionário aberto enquanto trabalha com os dados. Os nomes das variáveis só fazem sentido com ele. Para o Censo 2022, os arquivos temáticos disponíveis incluem `"Basico"`, `"Domicilio"`, `"Pessoas"` e `"ResponsavelRenda"`, entre outros.
+
+------------------------------------------------------------------------
+
+## (2) Leitura dos arquivos temáticos
+
+Carregamos os dois arquivos necessários para as variáveis de interesse. Cada um retorna uma **Arrow table**, um formato otimizado para memória que permite filtrar e selecionar colunas antes de carregar os dados para a RAM. O `collect()` só é chamado ao final, quando o subconjunto de interesse já está definido.
+
+```{r}
+sc2022     <- censobr::read_tracts(dataset = "Basico",    year = 2022)
+sc2022_dom <- censobr::read_tracts(dataset = "Domicilio", year = 2022)
+```
+
+------------------------------------------------------------------------
+
+## (3) Construção da base de dados integrada
+
+Faremos uma junção dos dois arquivos em um único `data.frame`, selecionando apenas as variáveis de interesse e calculando os indicadores de inadequação.
+
+### (3a) Variáveis selecionadas
+
+| Arquivo | Código original | Nome atribuído | Descrição |
+|------------------|------------------|------------------|------------------|
+| Básico | `V0001` | `tot` | População total residente |
+| Domicílio | `domicilio01_V00001` | `dpp` | Domicílios particulares permanentes |
+| Domicílio | `domicilio02_V00111` | `redger_a` | Dom. com água da rede geral |
+| Domicílio | `domicilio02_V00309` | `redger_e` | Dom. com esgoto via rede geral |
+| Domicílio | `domicilio02_V00310` | `fossa_s` | Dom. com fossa séptica ligada à rede |
+
+A partir dessas variáveis brutas, derivamos:
+
+-   **`perc_agua_inadeq`**: proporção de domicílios *sem* abastecimento de água pela rede geral (`1 - redger_a/dpp`)
+-   **`perc_esg_inadeq`**: proporção de domicílios com esgotamento *inadequado* — sem rede geral nem fossa séptica ligada (`1 - (redger_e + fossa_s)/dpp`)
+
+### (3b) Código de integração
+
+```{r}
+sc_tot_2022 <- sc2022 %>%
+  select(code_tract, code_muni, V0001) %>%
+  rename('tot' = 'V0001') %>%
+
+  # Juntando com arquivo de Domicílio
+  left_join(
+    sc2022_dom %>% select(code_tract, code_muni,
+                          domicilio01_V00001,
+                          domicilio02_V00111,
+                          domicilio02_V00309,
+                          domicilio02_V00310)
+  ) %>%
+  rename('dpp'     = 'domicilio01_V00001',
+         'redger_a' = 'domicilio02_V00111',
+         'redger_e' = 'domicilio02_V00309',
+         'fossa_s'  = 'domicilio02_V00310') %>%
+
+  collect() %>%   # aqui os dados saem da Arrow table e vão para a RAM
+
+  mutate(
+    perc_agua_inadeq = 100*(1 - redger_a / dpp),
+    perc_esg_inadeq  = 100*(1 - (redger_e + fossa_s) / dpp)
+  )
+```
+
+Verificando o resultado:
+
+```{r}
+nrow(sc_tot_2022)   # setores no Brasil
+names(sc_tot_2022)  # variáveis disponíveis
+```
+
+------------------------------------------------------------------------
+
+## (4) Filtrando para Macapá e integrando com dados geográficos (Macapá-AP)
+
+```{r}
+# Obtendo o código IBGE de Macapá
+mcp_ibge <- geobr::lookup_muni(name_muni = "Macapá")$code_muni
+
+# Filtrando o dataset analítico para Macapá
+sc_mcp_2022 <- sc_tot_2022 %>%
+  filter(code_muni == mcp_ibge)
+
+nrow(sc_mcp_2022)  # setores censitários em Macapá
+```
+
+```{r}
+#| results: hide
+
+# Lendo os polígonos dos setores censitários de Macapá
+mcp_sc_geo <- geobr::read_census_tract(code_tract = mcp_ibge, simplified = FALSE)
+
+# Ambos têm a coluna code_tract — usada como chave de junção
+mcp_sc_geo <- mcp_sc_geo %>%
+  left_join(sc_mcp_2022, by = "code_tract")
+```
+
+------------------------------------------------------------------------
+
+## (5) Visualização com mapview
+
+### (5a) População total residente
+
+```{r}
+mapview(mcp_sc_geo,
+        zcol       = "tot",
+        layer.name = "Pop. total residente",
+        col.regions = hcl.colors(100, palette = "Blues 3") |> rev())
+```
+
+### (5b) Total de domicílios particulares permanentes
+
+```{r}
+mapview(mcp_sc_geo,
+        zcol       = "dpp",
+        layer.name = "Dom. part. permanentes",
+        col.regions = hcl.colors(100, palette = "Purples 3") |> rev())
+```
+
+### (5c) % de domicílios com abastecimento de água inadequado
+
+```{r}
+mapview(mcp_sc_geo,
+        zcol       = "perc_agua_inadeq",
+        layer.name = "% dom. sem água da rede",
+        col.regions = hcl.colors(100, palette = "Reds 3") |> rev())
+```
+
+### (5d) % de domicílios com esgotamento sanitário inadequado
+
+```{r}
+mapview(mcp_sc_geo,
+        zcol       = "perc_esg_inadeq",
+        layer.name = "% dom. esgoto inadequado",
+        col.regions = hcl.colors(100, palette = "YlOrRd") |> rev())
+```
+
+------------------------------------------------------------------------
+
+## Referências
+
+-   [Pacote `censobr`](https://ipeagit.github.io/censobr/)
+-   [Pacote `geobr`](https://ipeagit.github.io/geobr/)
+-   [Pacote `mapview`](https://r-spatial.github.io/mapview/)
