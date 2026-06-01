@@ -1,6 +1,6 @@
 ## Featured papers
 
-- Pedreira Junior, J. U.; Louro, T. V.; Assis, L. B. M.; Brito, P. L.; Bomfim, F. G. BGBI: A citywide-referenced and bidirectional land use mix index for planning and policy evaluation. **Land Use Policy**, 169 (2026), 108135.[DOI](https://doi.org/10.1016/j.landusepol.2026.108135)
+- Pedreira Junior, J. U.; Louro, T. V.; Assis, L. B. M.; Brito, P. L.; Bomfim, F. G. (2026). BGBI: A citywide-referenced and bidirectional land use mix index for planning and policy evaluation. **Land Use Policy**, 169, 108135.[DOI](https://doi.org/10.1016/j.landusepol.2026.108135)
 
 - Pedreira Junior, J. U., Pitombo, C. S. (2026). Exploring the heterogeneity of changes in work-related mobility patterns throughout the COVID-19 crisis in Brazil: A latent Markov chain analysis of a 3-year panel data. **Travel Behaviour and Society**, v. 42, p. 101160, 2026. [DOI](https://doi.org/10.1016/j.tbs.2025.101160)
 
